@@ -1,0 +1,229 @@
+@import './static.scss';
+
+.portfolio{
+  display: flex;
+  color: $color2;
+  background-color: $color1;
+  .skills{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 50%;
+    gap: 10px;
+    h4{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      font-size: 2rem;
+      font-family: $font1;
+    }
+    .skillslistitem{
+      width: 100%;
+      height: 80%;
+      padding: 15px;
+      display: flex;
+      gap:1%;
+      justify-content: flex-start;
+      flex-wrap: wrap;
+      align-items: center;
+      >.item{
+        font-size: 34px;
+        font-family: $font3;
+        background-color: $color3;
+        border-radius: 12px;
+        font-weight: 700;
+        width: 150px;
+        height: 150px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+  }
+  >.project{
+    width: 50%;
+    >h2{
+      background-color: $color1;
+      font-family: $font1;
+      font-size: 2rem;
+    }
+    position: relative;
+    height: 100%;
+    z-index: 10;
+    >.image{
+      height: 100%;
+      width: 100%;
+      z-index: 0;
+      img{
+        height: 100%;
+        width: 100%;
+      }
+    }
+    .projectContainer{
+      position: relative;
+      color: $color4;
+      padding: 15px;
+      height: 100%;
+      width: 100%;
+      background-color: $color7;
+      z-index: 40;
+      .projectCard{
+      position: relative;
+      display: flex;
+      height: 30rem;
+      .img{
+        img{
+          height: 100%;
+          object-fit: fill;
+          width: 100%;
+        }
+        height: 100%;
+        width: 40%;
+      }
+      .details{
+        padding: 15px;
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-around;
+        flex-direction: column;
+        .name{
+          display: flex;
+          gap: 10px;
+          font-size: 1.7em;
+          font-family: $font1;
+          text-transform: capitalize;
+          font-weight: 600;
+        }
+        p{
+          display: flex;
+          overflow: scroll;
+          font-size: 1rem;
+          font-family: $font2;
+          &::-webkit-scrollbar{
+            display: none;
+          }
+        }
+        .link{
+          height: 45px;
+          background-color: transparent;
+          box-shadow: 0 0 3px $color2;
+          border-radius: 20px;
+          width: 40%;
+          &:hover{
+            cursor: pointer;
+            box-shadow: 0 0  6px $color2;
+          }
+          >a{
+            align-items: center;
+            font-family: $font1;
+            color: $color2;
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+            text-decoration: none;
+          }
+        }
+      }
+    }
+    }
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .portfolio{
+    .skills{
+      .skillslistitem{
+        justify-content: space-evenly;
+      }
+    }
+  }
+}
+
+
+@media screen and (max-width: 980px) {
+  .portfolio{
+    flex-direction: column;
+    .skills{
+      width: 100%;
+    }
+    .project{
+      width: 100%;
+    }
+  }
+}
+@media screen and (max-width: 975px) {
+  .portfolio{
+    flex-direction: column;
+    .skills{
+      width: 100%;
+      .skillslistitem{
+        padding: 5%;
+        gap: 3%;
+        justify-content: flex-start;
+      }
+    }
+    .project{
+      width: 100%;
+    }
+  }
+}
+@media screen and (max-width: 715px) {
+  .portfolio{
+    flex-direction: column;
+    .skills{
+      width: 100%;
+      .skillslistitem{
+        justify-content: center;
+      }
+    }
+    .project{
+      width: 100%;
+    }
+  }
+}
+@media screen and (max-width: 550px) {
+  .portfolio{
+    flex-direction: column;
+    .skills{
+      width: 100%;
+      .skillslistitem{
+        justify-content:center ;
+        .item{
+          width: 45%;
+        }
+      }
+    }
+    .project{
+      width: 100%;
+      .projectContainer{
+        height: 36rem;
+        .projectCard{
+          height: 36rem;
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 420px) {
+  .portfolio{
+    flex-direction: column;
+    .skills{
+      display: none;
+      height: 60rem; 
+      width: 100%;
+      .skillslistitem{
+        justify-content: center;
+        .item{
+          height: 7rem;
+          width: 100%;
+        }
+      }
+    }
+    .project{
+      width: 100%;
+    }
+  }
+}
