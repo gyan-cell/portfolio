@@ -10,9 +10,12 @@
   },
   "dependencies": {
     "@emailjs/browser": "^3.11.0",
+    "animate.css": "^4.1.1",
+    "aos": "^2.3.4",
     "dotenv": "^16.3.1",
     "next": "13.4.12",
     "react": "18.2.0",
+    "react-animate-on-scroll": "^2.1.9",
     "react-dom": "18.2.0",
     "react-hot-toast": "^2.4.1",
     "react-icons": "^4.10.1",
