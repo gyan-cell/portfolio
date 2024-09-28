@@ -1,8 +1,9 @@
-import { ModeToggle } from "@/components/ModeToggle";
-import { Button } from "@/components/ui/button";
+import Hero from "./components/server/Heropage/Hero";
 
 export default function Home() {
   return (
-    <div><ModeToggle /></div>
+    <>
+      <Hero />
+    </>
   )
 }
