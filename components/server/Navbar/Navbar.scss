@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Itim&family=Jacquarda+Bastarda+9&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+
+
+nav {
+  display: flex;
+  top: 0;
+  position: sticky;
+  z-index: 1;
+  height: 4rem;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  font-family: "Caveat", system-ui;
+
+  .icon {
+    font-size: 1.7rem;
+  }
+
+  >.NavElements {
+    display: flex;
+    gap: 1.5rem;
+    font-size: 1.5rem;
+    height: 100%;
+    align-items: center;
+    font-family: "Itim", cursive;
+
+    >a {
+      &:hover {
+        cursor: pointer;
+        scale: 1.1;
+      }
+    }
+  }
+
+  .navMenuicon {
+    display: none;
+    gap: 1rem;
+    height: 100%;
+    align-items: center;
+
+    >svg {
+      font-size: 1.5rem;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  nav {
+    .navMenuicon {
+      display: flex;
+    }
+
+    .NavElements {
+      position: absolute;
+      height: 100vh;
+      flex-direction: column;
+      left: 0;
+      width: 100%;
+      top: 4rem;
+      transform: translateY(-200%);
+      transition: all ease-in-out 1s;
+    }
+
+
+    .activeNav {
+      transform: translateY(0%);
+    }
+  }
+}
