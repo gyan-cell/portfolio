@@ -19,13 +19,11 @@ const NavElements = () => {
         <Link href='/resume'>Resume</Link>
         <Link href={'/meet'} >Google Meet Me </Link>
         <Link href={'mailto:hellogyanranjan@gmail.com'} type="email">Email</Link>
-        <ModeToggle />
       </div>
       <div className='navMenuicon'  >
         {
           showNav ? <AiOutlineMenu onClick={() => setShowNav(false)} /> : <FaX onClick={() => setShowNav(true)} />
         }
-        <ModeToggle />
       </div>
     </>
   )
