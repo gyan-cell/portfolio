@@ -7,7 +7,7 @@ import { FaX } from "react-icons/fa6";
 const NavElements = () => {
 
 
-  const [showNav, setShowNav] = React.useState(false)
+  const [showNav, setShowNav] = React.useState(true)
 
   return (
     <>

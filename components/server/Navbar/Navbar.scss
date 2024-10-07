@@ -66,6 +66,12 @@ nav {
       top: 4rem;
       transform: translateY(-200%);
       transition: all ease-in-out 1s;
+      background: rgba(0, 0, 0, 0.8);
+
+      >a {
+        font-size: 2rem;
+        color: greenyellow;
+      }
     }
 
 

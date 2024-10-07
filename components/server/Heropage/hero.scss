@@ -70,3 +70,52 @@
     height: 100%;
   }
 }
+
+
+@media screen and (max-width: 1000px) {
+  .heroContent {
+
+    >.heroText {
+      align-items: center;
+      width: 100%;
+
+      >h1 {
+        text-align: center;
+        font-size: 2rem;
+
+        >span {
+          font-size: 2rem;
+        }
+      }
+    }
+
+    >.heroSlider {
+      width: 100%;
+    }
+  }
+}
+
+@media screen and (max-width: 840px) {
+  .heroContent {
+    flex-direction: column-reverse;
+    height: 30rem;
+
+    >.heroText {
+      >h1 {
+        font-size: 1.5rem;
+
+        >span {
+          font-size: 1.5rem;
+        }
+      }
+    }
+  }
+}
+
+
+@media screen and (min-height: 1000px) {
+  .heroWrapper {
+    margin-top: 0;
+    height: 45rem;
+  }
+}
