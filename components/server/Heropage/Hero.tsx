@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import React from 'react'
 import "./hero.scss"
-import image from "@/images/wallhaven-5w1627.jpg"
+import image from "@/images/wallhaven-p2myjp.jpg"
 import LottieFiles from '@/components/client/LottieFiles'
 
 
