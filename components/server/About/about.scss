@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Itim&family=Jacquarda+Bastarda+9&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+
+#about {
+  height: 40rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Caveat", system-ui;
+  flex-direction: row-reverse;
+
+  >.skillSection {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Itim", cursive;
+    flex-direction: column;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.9));
+    color: white;
+
+    >h1 {
+      font-size: 3rem;
+
+    }
+
+    >.skills {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      gap: 1rem;
+      padding: 1rem;
+
+      >.skillName {
+        font-size: 1.5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 40%;
+
+        >span {
+          font-size: 1.5rem;
+          color: #22c55e;
+          margin-left: 0.5rem;
+        }
+      }
+
+      >.skillProgress {
+        width: 60%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+  }
+
+  >.additionalSection {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    font-family: "Itim", cursive;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.9));
+    color: white;
+    gap: 1rem;
+    padding: 3rem;
+
+    >h1 {
+      font-size: 3rem;
+    }
+
+    >img {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+    }
+
+    >p {
+      font-size: 1.5rem;
+    }
+  }
+}
+
+
+@media screen and (max-width: 1200px) {
+  #about {
+    height: max-content;
+    flex-direction: column-reverse;
+
+    >.skillSection {
+      width: 100%;
+    }
+
+    >.additionalSection {
+      width: 100%;
+    }
+  }
+}
+
+
+@media screen and (max-width: 500px) {
+  #about {
+    >.skillSection {
+      >.skills {
+        flex-direction: column;
+
+        >.skillName {
+          width: 100%;
+
+        }
+
+        >.skillProgress {
+          width: 100%;
+        }
+      }
+    }
+  }
+}

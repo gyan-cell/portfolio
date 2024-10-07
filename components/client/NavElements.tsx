@@ -11,8 +11,8 @@ const NavElements = () => {
 
   return (
     <>
-      <div className={showNav ? 'NavElements bg-transparent  bg-none ' : 'NavElements activeNav bg-transparent  bg-none  bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-20 '}  >
-        <Link href='/about'>About</Link>
+      <div className={showNav ? 'NavElements  ' : 'NavElements activeNav bg-transparent  bg-none  bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-20 '}  >
+        <Link href='#about'>About</Link>
         <Link href='/projects'>Projects</Link>
         <Link href='/contact'>Contact</Link>
         <Link href='/blog'>Blog</Link>
