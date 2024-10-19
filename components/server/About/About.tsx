@@ -37,6 +37,10 @@ const About = () => {
           <div className='skillProgress'  ><Progress value={60} /></div>
         </div>
         <div className='skills'  >
+          <div className='skillName'  >Python <span  >50%</span>  </div>
+          <div className='skillProgress'  ><Progress value={50} /></div>
+        </div>
+        <div className='skills'  >
           <div className='skillName'  >NEXT JS <span  >85%</span>  </div>
           <div className='skillProgress'  ><Progress value={85} /></div>
         </div>
