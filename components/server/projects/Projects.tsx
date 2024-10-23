@@ -7,7 +7,6 @@ const Projects = () => {
     <>
       <div id="projects"  >
         <div className='projectSection'  >
-          <h1>Projects</h1>
         </div>
         <ProjectStuff />
       </div>
