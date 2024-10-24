@@ -41,6 +41,7 @@ const ContactForm = () => {
               <FormItem className='inputContainer'  >
                 <FormLabel className={`text-xl ${itim.className} `}  >Username</FormLabel>
                 <Input placeholder='Please Enter Your Name.' className={`text-xl h-10 ${itim.className} `}  {...field} />
+                {form.formState.errors.username && <p className="text-red-500">{form.formState.errors.username.message}</p>}
               </FormItem>
             )
           }}
@@ -52,7 +53,8 @@ const ContactForm = () => {
             return (
               <FormItem className='inputContainer'  >
                 <FormLabel className={`text-xl ${itim.className} `}  >Email</FormLabel>
-                <Input placeholder='Please Enter Your Name.' className={`text-xl h-10 ${itim.className} `}  {...field} />
+                <Input placeholder='Please Enter Your Email.' className={`text-xl h-10 ${itim.className} `}  {...field} />
+                {form.formState.errors.email && <p className="text-red-500">{form.formState.errors.email.message}</p>}
               </FormItem>
             )
           }}
@@ -64,8 +66,9 @@ const ContactForm = () => {
           render={({ field }) => {
             return (
               <FormItem className='inputContainer'  >
-                <FormLabel className={`text-xl ${itim.className} `}   >Messsage</FormLabel>
+                <FormLabel className={`text-xl ${itim.className}  `}   >Message</FormLabel>
                 <Textarea rows={10} placeholder='Please Enter Your Message.' className={`text-xl h-10 ${itim.className} `}  {...field} />
+                {form.formState.errors.message && <p className="text-red-500">{form.formState.errors.message.message}</p>}
               </FormItem>
             )
           }}
