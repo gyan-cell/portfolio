@@ -8,7 +8,7 @@ const Footer = () => {
   return (
 
     <footer>
-      <div className={`footerCard ${itim.className} `}  >@Gyanranjan Jha</div>
+      <div className={`footerCard ${itim.className}`}  ><span className={itim.className}  >© 2024 Gyanranjan Jha</span></div>
       <div className='scrollToTop'  ><Link href='#'><ArrowUp /></Link></div>
     </footer>
 

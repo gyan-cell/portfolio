@@ -39,7 +39,7 @@ const ContactForm = () => {
           render={({ field }) => {
             return (
               <FormItem className='inputContainer'  >
-                <FormLabel className='text-xl'  >Username</FormLabel>
+                <FormLabel className={`text-xl ${itim.className} `}  >Username</FormLabel>
                 <Input placeholder='Please Enter Your Name.' className={`text-xl h-10 ${itim.className} `}  {...field} />
               </FormItem>
             )
@@ -51,7 +51,7 @@ const ContactForm = () => {
           render={({ field }) => {
             return (
               <FormItem className='inputContainer'  >
-                <FormLabel className='text-xl'  >Email</FormLabel>
+                <FormLabel className={`text-xl ${itim.className} `}  >Email</FormLabel>
                 <Input placeholder='Please Enter Your Name.' className={`text-xl h-10 ${itim.className} `}  {...field} />
               </FormItem>
             )
@@ -64,7 +64,7 @@ const ContactForm = () => {
           render={({ field }) => {
             return (
               <FormItem className='inputContainer'  >
-                <FormLabel className='text-xl'   >Messsage</FormLabel>
+                <FormLabel className={`text-xl ${itim.className} `}   >Messsage</FormLabel>
                 <Textarea rows={10} placeholder='Please Enter Your Message.' className={`text-xl h-10 ${itim.className} `}  {...field} />
               </FormItem>
             )

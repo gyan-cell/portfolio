@@ -48,10 +48,10 @@ const About = () => {
       </div>
       <div className={`additionalSection ${itim.className}`}  >
         <Image src={image} alt="gyanranjan" />
-        <h1>Who Am I?</h1>
-        <p>My Name Is Gyanranjan Jha.</p>
-        <p>I am From India. I Like To Read Books  , Listen To Music  , Play Chess  , <br /> Work Out , And Not To Mention I aM A Big Fan Of Cinema. </p>
-        <p>I am Currently Learning Web Development. I am Trying To Improve My Skills. </p>
+        <h1 className={itim.className}  >Who Am I?</h1>
+        <p className={itim.className}  >My Name Is Gyanranjan Jha.</p>
+        <p className={itim.className}  >I am From India. I Like To Read Books  , Listen To Music  , Play Chess  , <br /> Work Out , And Not To Mention I aM A Big Fan Of Cinema. </p>
+        <p className={itim.className}  >I am Currently Learning Web Development. I am Trying To Improve My Skills. </p>
       </div>
     </div>
   )
