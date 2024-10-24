@@ -9,6 +9,19 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+.itim-regular {
+  font-family: "Itim", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.caveat {
+  font-family: "Caveat", serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;

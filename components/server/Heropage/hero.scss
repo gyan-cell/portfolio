@@ -44,7 +44,7 @@
     padding: 2rem;
 
     >h1 {
-      font-family: "Itim";
+      font-family: "Itim" !important;
       font-size: 3rem;
       color: white;
 
@@ -55,7 +55,7 @@
     }
 
     >p {
-      font-family: "Caveat";
+      font-family: "Caveat" !important;
       font-size: 1.5rem;
       color: white;
     }
