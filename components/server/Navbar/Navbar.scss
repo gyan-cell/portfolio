@@ -10,7 +10,7 @@ nav {
   justify-content: space-between;
   align-items: center;
   padding: 1rem;
-  font-family: "Caveat", system-ui;
+  font-family: "Caveat";
   background: transparent;
 
   .icon {
@@ -23,7 +23,7 @@ nav {
     font-size: 1.5rem;
     height: 100%;
     align-items: center;
-    font-family: "Itim", cursive;
+    font-family: "Itim";
 
     >a {
       &:hover {

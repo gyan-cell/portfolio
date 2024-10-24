@@ -5,7 +5,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: "Caveat", system-ui;
+  font-family: "Caveat";
   flex-direction: row-reverse;
 
   >.skillSection {
@@ -14,7 +14,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: "Itim", cursive;
+    font-family: "Itim";
     flex-direction: column;
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.9));
     color: white;
@@ -62,7 +62,7 @@
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    font-family: "Itim", cursive;
+    font-family: "Itim";
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.9));
     color: white;
     gap: 1rem;
