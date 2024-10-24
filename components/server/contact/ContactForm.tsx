@@ -8,6 +8,7 @@ import { Label } from '@radix-ui/react-label'
 import { Input } from '@/components/ui/input'
 import { Button } from '@/components/ui/button'
 import { Textarea } from '@/components/ui/textarea'
+import { itim } from '@/styles/fonts'
 
 const contactSchema = z.object({
   username: z.string().min(1, { message: "Please enter your username" }),
@@ -39,7 +40,7 @@ const ContactForm = () => {
             return (
               <FormItem className='inputContainer'  >
                 <FormLabel className='text-xl'  >Username</FormLabel>
-                <Input placeholder='Please Enter Your Name.' className='text-xl h-10'  {...field} />
+                <Input placeholder='Please Enter Your Name.' className={`text-xl h-10 ${itim.className} `}  {...field} />
               </FormItem>
             )
           }}
@@ -51,7 +52,7 @@ const ContactForm = () => {
             return (
               <FormItem className='inputContainer'  >
                 <FormLabel className='text-xl'  >Email</FormLabel>
-                <Input placeholder='please Enter Your Email.' className='h-10 text-xl '  {...field} />
+                <Input placeholder='Please Enter Your Name.' className={`text-xl h-10 ${itim.className} `}  {...field} />
               </FormItem>
             )
           }}
@@ -64,13 +65,12 @@ const ContactForm = () => {
             return (
               <FormItem className='inputContainer'  >
                 <FormLabel className='text-xl'   >Messsage</FormLabel>
-                <Textarea rows={10} placeholder='Please Enter Your Message.' className='text-xl h-10'  {...field} />
+                <Textarea rows={10} placeholder='Please Enter Your Message.' className={`text-xl h-10 ${itim.className} `}  {...field} />
               </FormItem>
             )
           }}
         />
-
-        <Button className='w-full text-xl' type="submit">Submit</Button>
+        <Button className={`text-xl ${itim.className} w-full `} type="submit">Submit</Button>
       </form>
     </Form>
   )

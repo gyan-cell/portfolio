@@ -5,6 +5,7 @@ import { Github, Instagram, Linkedin } from 'lucide-react'
 import Link from 'next/link'
 import { InstagramLogoIcon } from '@radix-ui/react-icons'
 import { FaGithub } from 'react-icons/fa6'
+import { itim } from '@/styles/fonts'
 
 const ContactMe = () => {
   return (
@@ -13,7 +14,7 @@ const ContactMe = () => {
         <ContactForm />
       </div>
       <div className='contactText'  >
-        <h1>Connect Me On</h1>
+        <h1 className={itim.className}  >Connect Me On</h1>
         <div className='contactIcons'  >
           <div className='circle' >
             <Link target='_blank' href={'https://github.com/gyan-cell'}><FaGithub /></Link>

@@ -14,6 +14,7 @@ import Link from 'next/link';
 
 
 import parse from 'html-react-parser';
+import { itim } from '@/styles/fonts';
 const projectArray = [
   {
     name: "Neovim Configuration",
@@ -57,7 +58,7 @@ const ProjectStuff = () => {
           return (
             <SwiperSlide
               key={index}>
-              <div className='projectSlideContainer' >
+              <div className={`projectSlideContainer ${itim.className}`} >
                 <div className='projectSlide'  >
                   <div className='slideImage'  >
                     <Image src={item.image} alt={item.name} />
