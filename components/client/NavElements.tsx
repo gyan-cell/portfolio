@@ -13,8 +13,8 @@ const NavElements = () => {
         <Link href='#about'>About</Link>
         <Link href='#projects'>Projects</Link>
         <Link href='#contact'>Contact</Link>
-        <Link href='/blog'>Blog</Link>
         <Link href={'mailto:hellogyanranjan@gmail.com'} type="email">Email</Link>
+        <Link href='/blog'>Blogs</Link>
       </div>
       <div className='navMenuicon'  >
         {

@@ -37,6 +37,10 @@
         font-family: "Itim", cursive;
         flex-direction: column;
         color: white;
+
+        >textarea {
+          height: 8rem;
+        }
       }
     }
 
@@ -75,12 +79,22 @@
         justify-content: center;
         align-items: center;
 
-        &:hover {
-          background-color: white;
-          color: #22c55e;
-        }
 
         >a {
+
+          height: 100%;
+          width: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          transition: 0.5s;
+
+          &:hover {
+            background-color: white;
+            border-radius: 50%;
+            color: #22c55e;
+          }
+
 
           >svg {
             font-size: 2rem;
@@ -111,6 +125,12 @@
 @media screen and (max-width: 700px) {
   .contact {
     flex-direction: column;
+    height: max-content;
+
+    >.contactText {
+      width: 100%;
+      padding: 0.7rem;
+    }
 
     >.contactForm {
       width: 100%;

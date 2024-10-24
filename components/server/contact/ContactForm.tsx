@@ -64,7 +64,7 @@ const ContactForm = () => {
             return (
               <FormItem className='inputContainer'  >
                 <FormLabel className='text-xl'   >Messsage</FormLabel>
-                <Textarea placeholder='Please Enter Your Message.' className='text-xl h-10'  {...field} />
+                <Textarea rows={10} placeholder='Please Enter Your Message.' className='text-xl h-10'  {...field} />
               </FormItem>
             )
           }}

@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Itim&family=Jacquarda+Bastarda+9&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.9));
+  height: 5rem;
+
+  >.footerCard {
+    color: white;
+    font-size: 2rem;
+    font-family: 'Caveat', cursive;
+    font-family: 'Itim', cursive;
+  }
+
+  >.scrollToTop {
+    color: white;
+    font-size: 0.9rem;
+    font-family: 'Itim', cursive;
+    position: absolute;
+    height: 50px;
+    width: 50px;
+    background: #22c55e;
+    border-radius: 50%;
+
+    >a {
+      height: 100%;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      &:hover {
+        background: white;
+        border-radius: 50%;
+        color: #22c55e;
+        transition: 0.5s;
+      }
+    }
+
+    right: 0.5%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .footerCard {
+    font-size: 1.5rem !important;
+  }
+}
