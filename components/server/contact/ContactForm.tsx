@@ -1,14 +1,17 @@
 "use client"
 import { useForm } from 'react-hook-form'
+import toast, { Toaster } from 'react-hot-toast';
 import { zodResolver } from '@hookform/resolvers/zod'
 import { z } from 'zod'
 import React from 'react'
 import { Form, FormDescription, FormField, FormItem, FormLabel } from '@/components/ui/form'
 import { Label } from '@radix-ui/react-label'
+import axios from 'axios'
 import { Input } from '@/components/ui/input'
 import { Button } from '@/components/ui/button'
 import { Textarea } from '@/components/ui/textarea'
 import { itim } from '@/styles/fonts'
+import { useToast } from '@/hooks/use-toast'
 
 const contactSchema = z.object({
   username: z.string().min(1, { message: "Please enter your username" }),
@@ -17,6 +20,8 @@ const contactSchema = z.object({
 })
 
 const ContactForm = () => {
+
+  const [formSubmit, setFormSubmit] = React.useState(false)
 
   const form = useForm<z.infer<typeof contactSchema>>({
     resolver: zodResolver(contactSchema),
@@ -27,15 +32,31 @@ const ContactForm = () => {
     }
   })
 
-  const onSubmit = async (data: z.infer<typeof contactSchema>) => {
+  const onSubmit = async (data: z.infer<typeof contactSchema>, e: any) => {
+    setFormSubmit(true);
+    e.preventDefault();
     try {
+      const response = await axios.post('http://localhost:3000/api/contactemail', {
+        name: data.username,
+        email: data.email,
+        message: data.message
+      })
+      if (response.status === 200 && response.data.message === "Success") {
+        toast.success('Message sent successfully.')
+        form.reset()
+      }
+      setFormSubmit(false);
+      console.log(response)
     } catch (error) {
+      toast.error('Something went wrong. Please try again later.')
 
+      setFormSubmit(false);
     }
   }
 
   return (
     <Form {...form}>
+      <Toaster />
       <form onSubmit={form.handleSubmit(onSubmit)}>
         <FormField
           control={form.control}
@@ -77,7 +98,7 @@ const ContactForm = () => {
             )
           }}
         />
-        <Button className={`text-xl ${itim.className} w-full `} type="submit">Submit</Button>
+        <Button className={`text-xl ${itim.className} w-full  `} disabled={formSubmit} type="submit">Submit</Button>
       </form>
     </Form>
   )
