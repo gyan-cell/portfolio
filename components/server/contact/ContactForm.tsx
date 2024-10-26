@@ -27,7 +27,11 @@ const ContactForm = () => {
     }
   })
 
-  const onSubmit = (data: z.infer<typeof contactSchema>) => {
+  const onSubmit = async (data: z.infer<typeof contactSchema>) => {
+    try {
+    } catch (error) {
+
+    }
   }
 
   return (
