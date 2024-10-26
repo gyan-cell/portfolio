@@ -36,7 +36,7 @@ const ContactForm = () => {
     setFormSubmit(true);
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:3000/api/contactemail', {
+      const response = await axios.post(process.env.NEXT_PUBLIC_APP_URL as string + "api/contactemail", {
         name: data.username,
         email: data.email,
         message: data.message
