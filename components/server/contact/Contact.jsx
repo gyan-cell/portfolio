@@ -14,7 +14,8 @@ const ContactMe = () => {
         <ContactForm />
       </div>
       <div className='contactText'  >
-        <h1 className={itim.className}  >Connect Me On {process.env.NEXT_PUBLIC_APP_URL}</h1>
+        <h1 className={itim.className}  >Connect Me On. </h1>
+
         <div className='contactIcons'  >
           <div className='circle' >
             <Link target='_blank' href={'https://github.com/gyan-cell'}><FaGithub /></Link>
