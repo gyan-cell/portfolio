@@ -29,8 +29,6 @@ export async function POST(request: Request, response: Response) {
     auth: {
       user: `${process.env.EMAIL}`,
       pass: `${process.env.PASSWORD}`,
-      // user: "jha07944@gmail.com",
-      // pass: "szgq gbds giyd ciio"
     }
   })
 
