@@ -11,7 +11,6 @@ const NavElements = () => {
 
   const pathName = usePathname();
 
-  console.log(pathName);
 
   return (
     <>
