@@ -16,11 +16,11 @@ const NavElements = () => {
   return (
     <>
       <div className={showNav ? 'NavElements  ' : 'NavElements activeNav bg-transparent  bg-none  bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-20 '}  >
-        <Link className={itim.className} href={pathName === '/blogs' ? '/#about' : '#about'}>About</Link>
-        <Link className={itim.className} href={pathName === '/blogs' ? '/#projects' : '#projects'}>Projects</Link>
-        <Link className={itim.className} href={pathName === '/blogs' ? '/#contact' : '#contact'}>Contact</Link>
-        <Link className={itim.className} href={'mailto:hellogyanranjan@gmail.com'} type="email">Email</Link>
-        <Link className={itim.className} href='/blogs'>Blogs</Link>
+        <Link onClick={() => setShowNav(true)} className={itim.className} href={pathName === '/blogs' ? '/#about' : '#about'}>About</Link>
+        <Link onClick={() => setShowNav(true)} className={itim.className} href={pathName === '/blogs' ? '/#projects' : '#projects'}>Projects</Link>
+        <Link onClick={() => setShowNav(true)} className={itim.className} href={pathName === '/blogs' ? '/#contact' : '#contact'}>Contact</Link>
+        <Link onClick={() => setShowNav(true)} className={itim.className} href={'mailto:hellogyanranjan@gmail.com'} type="email">Email</Link>
+        <Link onClick={() => setShowNav(true)} className={itim.className} href='/blogs'>Blogs</Link>
       </div>
       <div className='navMenuicon'  >
         {
