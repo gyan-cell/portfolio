@@ -1,8 +1,13 @@
+import { auth, signOut } from '@/auth'
+import { Button } from '@/components/ui/button';
 import React from 'react'
 
-const page = () => {
+const page = async () => {
+
+
+
   return (
-    <div>page</div>
+    <div><Button variant="default">Default</Button></div>
   )
 }
 
