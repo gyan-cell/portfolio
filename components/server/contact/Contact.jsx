@@ -1,7 +1,7 @@
 import React from 'react'
 import "./contact.scss"
 import ContactForm from './ContactForm'
-import { Github, Instagram, Linkedin } from 'lucide-react'
+import { Github, Instagram, Linkedin, Mail } from 'lucide-react'
 import Link from 'next/link'
 import { InstagramLogoIcon } from '@radix-ui/react-icons'
 import { FaGithub } from 'react-icons/fa6'
@@ -25,6 +25,9 @@ const ContactMe = () => {
           </div>
           <div className='circle' >
             <Link target='_blank' href={'https://www.instagram.com/gyanranjan_01/'}><Instagram /></Link>
+          </div>
+          <div className='circle' >
+            <Link target='_blank' href={'mailto:hellogyanranjan@gmail.com'}><Mail /></Link>
           </div>
         </div>
       </div>

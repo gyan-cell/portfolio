@@ -95,7 +95,56 @@
 }
 
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1600px) {
+  #about {
+    height: max-content;
+
+    >.skillSection {
+      width: 100%;
+      align-items: flex-start !important;
+
+      >.skills {
+
+        .skillName {
+          justify-content: flex-start;
+          font-size: 1.2rem;
+          width: 40%;
+
+          >span {
+            font-size: 1.2rem;
+          }
+        }
+
+        .skillProgress {
+          width: 60%;
+        }
+      }
+    }
+
+    >.additionalSection {
+      align-items: flex-start;
+      width: 100%;
+
+      >.setup {
+        width: 100%;
+        padding: 1rem;
+
+        >h1 {
+          font-size: 1.5rem;
+        }
+
+        >p {
+          font-size: 1.2rem;
+        }
+      }
+
+    }
+  }
+}
+
+
+
+@media screen and (max-width: 1250px) {
   #about {
     height: max-content;
     flex-direction: column-reverse;
