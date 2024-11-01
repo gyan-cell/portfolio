@@ -97,6 +97,7 @@
             gap: 1rem;
             flex-direction: column;
             padding: 1rem;
+            padding-left: 3rem;
 
             >li {
               list-style: circle;
@@ -107,6 +108,7 @@
           >p {
             width: 100%;
             font-size: 1.5rem;
+            text-align: start;
 
           }
         }
@@ -221,13 +223,18 @@
     }
 
     >.desc {
+      padding: 0 !important;
+
       >p {
         font-size: 1rem !important;
 
       }
 
       >ul {
+        padding-left: 1rem !important;
+
         >li {
+          padding-left: 0rem !important;
           font-size: 1rem !important;
         }
       }

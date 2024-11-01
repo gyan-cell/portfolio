@@ -25,9 +25,9 @@ const projectArray = [
     livePreview: "https://github.com/gyan-cell/nvim"
   },
   {
-    name: "I3 Wimdow Manager   Configuration",
+    name: "I3 Window Manager   Configuration",
     desc: "I3 Configuration For Linux Based Distributions With A Minimalistic Look Yet Extremely Functional And It Looks Beautiful .",
-    desc2: "<ul><li>I3 WM  Configuration</li><li>WAllpaper Gui Application Can Be Used. (Nitrogen)</li><li>Compatible With Any Linux Distribution</li><li>Uses BumbleBee Status bar</li><li>I Would Recommend Kitty as Terminal</li></ul>",
+    desc2: "<ul><li>I3 WM  Configuration</li><li>Gui For Wallpapers (Nitrogen)</li><li>Works On Any Linux Distro</li><li>Uses BumbleBee Status bar</li><li>I Would Recommend Kitty as Terminal</li></ul>",
     image: image1,
     sourceCode: "https://github.com/gyan-cell/All-Config",
   }
@@ -42,7 +42,7 @@ const ProjectStuff = () => {
       spaceBetween={30}
       centeredSlides={true}
       autoplay={{
-        delay: 2500,
+        delay: 3000,
         disableOnInteraction: false,
 
       }}
