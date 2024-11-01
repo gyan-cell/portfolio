@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Itim&family=Jacquarda+Bastarda+9&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
 
 #about {
-  height: 40rem;
+  height: 50rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -19,17 +19,13 @@
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.9));
     color: white;
 
-    >h1 {
-      font-size: 3rem;
 
-    }
 
     >.skills {
       display: flex;
       justify-content: center;
       align-items: center;
       width: 100%;
-      gap: 1rem;
       padding: 1rem;
 
       >.skillName {
@@ -59,14 +55,13 @@
     width: 50%;
     height: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     flex-direction: column;
     align-items: center;
     font-family: "Itim" !important;
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.9));
     color: white;
-    gap: 1rem;
-    padding: 3rem;
+    align-items: center;
 
     >h1 {
       font-size: 3rem;
@@ -78,8 +73,24 @@
       border-radius: 50%;
     }
 
-    >p {
-      font-size: 1.5rem;
+    >.setup {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      flex-direction: column;
+      gap: 0.5rem;
+
+      >h1 {
+        font-size: 2rem;
+      }
+
+      >p {
+        font-size: 1.5rem;
+
+        >a {
+          color: #22c55e;
+        }
+      }
     }
   }
 }
@@ -104,8 +115,17 @@
 @media screen and (max-width: 500px) {
   #about {
     >.additionalSection {
-      >p {
-        font-size: 1rem;
+
+      >.setup {
+        padding: 1rem;
+
+        >h1 {
+          font-size: 1.5rem;
+        }
+
+        >p {
+          font-size: 1rem;
+        }
       }
     }
 
@@ -115,10 +135,11 @@
 
         >.skillName {
           width: 100%;
-
+          font-size: 1rem;
         }
 
         >.skillProgress {
+          font-size: 1rem;
           width: 100%;
         }
       }
