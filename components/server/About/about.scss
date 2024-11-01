@@ -7,6 +7,7 @@
   align-items: center;
   font-family: "Caveat" !important;
   flex-direction: row-reverse;
+  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.9));
 
   >.skillSection {
     width: 50%;
@@ -16,7 +17,6 @@
     align-items: center;
     font-family: "Itim" !important;
     flex-direction: column;
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.9));
     color: white;
 
 
@@ -59,7 +59,6 @@
     flex-direction: column;
     align-items: center;
     font-family: "Itim" !important;
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.9));
     color: white;
     align-items: center;
 
@@ -103,10 +102,43 @@
 
     >.skillSection {
       width: 100%;
+      align-items: flex-start !important;
+
+      >.skills {
+
+        .skillName {
+          justify-content: flex-start;
+          font-size: 1.2rem;
+          width: 40%;
+
+          >span {
+            font-size: 1.2rem;
+          }
+        }
+
+        .skillProgress {
+          width: 60%;
+        }
+      }
     }
 
     >.additionalSection {
+      align-items: flex-start;
       width: 100%;
+
+      >.setup {
+        width: 100%;
+        padding: 1rem;
+
+        >h1 {
+          font-size: 1.5rem;
+        }
+
+        >p {
+          font-size: 1.2rem;
+        }
+      }
+
     }
   }
 }
