@@ -98,7 +98,7 @@ const ContactForm = () => {
             )
           }}
         />
-        <Button className={`text-xl ${itim.className} w-full  `} disabled={formSubmit} type="submit">Submit</Button>
+        <Button className={`text-xl ${itim.className} w-full h-12  `} disabled={formSubmit} type="submit">Submit</Button>
       </form>
     </Form>
   )
