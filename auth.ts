@@ -4,6 +4,20 @@ import Credentials from "next-auth/providers/credentials"
 import { z } from "zod"
 import getUser from "./utils/getUser"
 export const { handlers, signIn, signOut, auth } = NextAuth({
+  callbacks: {
+    authorized({ auth, request: { nextUrl } }) {
+
+      const isLoggedIn = !!auth?.user;
+      const isOnDashBoard = nextUrl.pathname === '/dashboard';
+      if (isOnDashBoard) {
+        if (isLoggedIn) return true;
+        return false; // Redirect unauthenticated users to login page
+      } else if (isLoggedIn) {
+        return Response.redirect(new URL('/dashboard', nextUrl));
+      }
+      return true;
+    },
+  },
   providers: [
     GithubProvider({
       clientId: process.env.NEXT_AUTH_GITHUB_ID!,
@@ -16,12 +30,13 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
           const { email, password } = passedCredentials.data;
           const user = getUser(email, password);
           if (user) {
-            return user
+            return user;
           };
-        } else {
-          throw new Error("Invalid credentials")
+          return null;
         }
+        return null;
       }
+
     })
   ],
   secret: process.env.NEXTAUTH_SECRET!,
