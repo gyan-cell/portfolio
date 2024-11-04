@@ -7,12 +7,10 @@ import clientPromise from "./lib/mongo-db-adapter"
 import { MongoDBAdapter } from "@auth/mongodb-adapter"
 import User from "./models/userModel"
 import CredentialsProvider from "next-auth/providers/credentials";
-import bcrypt from "bcryptjs"
 
 export const { handlers, signIn, signOut, auth } = NextAuth({
   callbacks: {
     authorized({ auth, request: { nextUrl } }) {
-
       const isLoggedIn = !!auth?.user;
       const isOnDashBoard = nextUrl.pathname === '/dashboard';
       if (isOnDashBoard) {
@@ -123,10 +121,7 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
         }
 
         // Compare passwords
-        const isPasswordMatch = await bcrypt.compare(
-          credentials.password as string,
-          user.password
-        );
+        const isPasswordMatch = user.password
 
         if (!isPasswordMatch) {
           throw new Error("Invalid password");
