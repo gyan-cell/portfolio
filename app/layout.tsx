@@ -4,6 +4,7 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import Navbar from "@/components/server/Navbar/Navbar";
 import Footer from "@/components/server/Footer/Footer";
+import connectDb from "@/utils/connectDb";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -20,6 +21,8 @@ export const metadata: Metadata = {
   title: "Gyanranjan Jha",
   description: "Fullstack Web Developer , Machine Learning!",
 };
+
+connectDb();
 
 export default function RootLayout({
   children,
