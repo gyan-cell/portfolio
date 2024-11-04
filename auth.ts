@@ -11,9 +11,11 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
       const isOnDashBoard = nextUrl.pathname === '/dashboard';
       if (isOnDashBoard) {
         if (isLoggedIn) return true;
+        // return Response.redirect(new URL('/login', nextUrl));
         return false; // Redirect unauthenticated users to login page
       } else if (isLoggedIn) {
-        return Response.redirect(new URL('/dashboard', nextUrl));
+        // return Response.redirect(new URL('/dashboard', nextUrl));
+        return true
       }
       return true;
     },
