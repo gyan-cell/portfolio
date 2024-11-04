@@ -23,8 +23,6 @@ const userSchema = new Schema<UserType>({
   },
   password: {
     type: String,
-    required: [true, 'Please provide a password'],
-    minLength: [6, 'Password must be at least 6 characters'],
     select: false
   },
   role: {
@@ -32,17 +30,24 @@ const userSchema = new Schema<UserType>({
     enum: ['user', 'admin'],
     default: 'user'
   },
-  profileImg: {
+  profileImage: {
     type: String,
-    default: 'null'
+    default: '/default-avatar.png'
+  },
+  isVerified: {
+    type: Boolean,
+    default: false
+  },
+  provider: {
+    type: String,
+    enum: ['github', 'google', 'credentials'],
+  },
+  providerAccountId: {
+    type: String
   }
+}, {
+  timestamps: true
 })
-
-// Add any pre-save middleware
-userSchema.pre('save', function(next) {
-  this.updatedAt = new Date();
-  next();
-});
 
 // Method to get user's public profile
 userSchema.methods.getPublicProfile = function() {
