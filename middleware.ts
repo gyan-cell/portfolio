@@ -19,7 +19,7 @@ export async function middleware(request: NextRequest) {
   }
 }
 
-export const config = {
-  matcher: '/:path*',
-}
 
+export const config = {
+  matcher: ['/((?!.+\\.[\\w]+$|_next).*)', '/', '/(api|trpc)(.*)'],
+}

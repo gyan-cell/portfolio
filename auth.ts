@@ -1,43 +1,33 @@
 import NextAuth from "next-auth"
 import GithubProvider from "next-auth/providers/github"
-import Credentials from "next-auth/providers/credentials"
 import { z } from "zod"
 import getUser from "./utils/getUser"
 import clientPromise from "./lib/mongo-db-adapter"
 import { MongoDBAdapter } from "@auth/mongodb-adapter"
 import User from "./models/userModel"
-import CredentialsProvider from "next-auth/providers/credentials";
+import Credentials from 'next-auth/providers/credentials';
+import connectDb from "./utils/connectDb"
+import { UserType } from "./types/user"
+
 
 export const { handlers, signIn, signOut, auth } = NextAuth({
   callbacks: {
-    authorized({ auth, request: { nextUrl } }) {
-      const isLoggedIn = !!auth?.user;
-      const isOnDashBoard = nextUrl.pathname === '/dashboard';
-      if (isOnDashBoard) {
-        if (isLoggedIn) return true;
-        // return Response.redirect(new URL('/login', nextUrl));
-        return false; // Redirect unauthenticated users to login page
-      } else if (isLoggedIn) {
-        // return Response.redirect(new URL('/dashboard', nextUrl));
-        return true
-      }
-      return true;
-    },
     async session({ session, token, user }) {
       try {
-        const dbUser = await User.findOne({ email: user.email });
+        const emailFinder = await session.user.email;
+        const dbUser = await User.findOne({ email: emailFinder });
         if (dbUser) {
-          session.user = {
-            ...session.user,
-            id: dbUser._id.toHexString(),
-            role: dbUser.role,
-            isVerified: dbUser.isVerified
-          }
+          session.user.id = dbUser._id.toString();
+          session.user.role = dbUser.role;
+          session.user.isVerified = dbUser.isVerified;
+          session.user.image = dbUser.profileImage;
+          session.user.name = dbUser.name;
+          session.user.email = dbUser.email;
         }
-        return session
+        return session;
       } catch (error) {
-        console.log("The Session Error", error)
-        return session
+        console.log("The Session Error", error);
+        return session;
       }
     },
     async jwt({ token, user }) {
@@ -50,7 +40,8 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
     },
     async signIn({ user, account, profile }) {
       try {
-        const existingUser = await User.findOne({ email: user.email })
+        await connectDb();
+        const existingUser = await User.findOne({ email: user.email });
         if (!existingUser) {
           await User.create({
             name: user.name,
@@ -59,9 +50,8 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
             profileImage: user.image,
             isVerified: true,
             providerAccountId: account?.providerAccountId
-          })
-        }
-        else {
+          });
+        } else {
           await User.findOneAndUpdate(
             { email: user.email },
             {
@@ -75,10 +65,10 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
             }
           );
         }
-        return true
+        return true;
       } catch (error) {
-        console.log("The Error In CAllBack", error)
-        return false
+        console.log("The Error In Callback", error);
+        return false;
       }
     }
   },
@@ -87,65 +77,60 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
       clientId: process.env.NEXT_AUTH_GITHUB_ID!,
       clientSecret: process.env.NEXT_AUTH_GITHUB_SECRET!,
     }),
-
-    CredentialsProvider({
-      name: "credentials",
+    Credentials({
+      name: 'credentials',
       credentials: {
-        email: {
-          label: "Email",
-          type: "email",
-          placeholder: "example@example.com"
-        },
-        password: {
-          label: "Password",
-          type: "password"
-        },
+        email: { label: "Email", type: "email" },
+        password: { label: "Password", type: "password" }
       },
       async authorize(credentials) {
         if (!credentials?.email || !credentials?.password) {
-          throw new Error("Email and password required");
+          throw new Error("Please enter both email and password");
         }
 
+        try {
+          await connectDb();
 
-        // Find user and explicitly select password field
-        const user = await User.findOne({ email: credentials.email })
-          .select("+password");
+          const user = await User.findOne({ email: credentials.email }).select("+password");
 
-        if (!user) {
-          throw new Error("User not found");
+          if (!user) {
+            throw new Error("No account found with this email");
+          }
+
+          if (!user.password) {
+            throw new Error(`Please sign in with your ${user.provider} account`);
+          }
+
+          const isPasswordMatch = user.password;
+          if (!isPasswordMatch) {
+            throw new Error("Invalid email or password");
+          }
+
+          return {
+            id: user._id.toString(),
+            email: user.email,
+            name: user.name,
+            role: user.role,
+            isVerified: user.isVerified,
+            image: user.profileImage
+          };
+
+        } catch (error: any) {
+          // Throw the error message directly
+          throw new Error(error.message || "Authentication failed");
         }
-
-        // Check if user has a password (might not if they used OAuth)
-        if (!user.password) {
-          throw new Error("Please login with your OAuth provider");
-        }
-
-        // Compare passwords
-        const isPasswordMatch = user.password
-
-        if (!isPasswordMatch) {
-          throw new Error("Invalid password");
-        }
-
-        return {
-          id: user._id.toHexString(),
-          email: user.email,
-          name: user.name,
-          role: user.role,
-          isVerified: user.isVerified,
-          image: user.profileImage
-        };
-      },
-    }),
-
-
+      }
+    })
   ],
   adapter: MongoDBAdapter(clientPromise),
   secret: process.env.NEXTAUTH_SECRET!,
   pages: {
     signIn: "/login",
+    error: "/auth/error", // Add this for custom error page
   },
   session: {
     strategy: "jwt"
-  }
+  },
+  debug: process.env.NODE_ENV === "development", // Add this for better debugging
 })
+
