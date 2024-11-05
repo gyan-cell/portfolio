@@ -19,7 +19,7 @@ const NavElements = () => {
         <Link onClick={() => setShowNav(true)} className={itim.className} href={pathName === '/blogs' ? '/#about' : '#about'}>About</Link>
         <Link onClick={() => setShowNav(true)} className={itim.className} href={pathName === '/blogs' ? '/#contact' : '#contact'}>Contact</Link>
         <Link onClick={() => setShowNav(true)} className={itim.className} href={'mailto:hellogyanranjan@gmail.com'} type="email">Email</Link>
-        <Link onClick={() => setShowNav(true)} className={itim.className} href='/blogs'>Blogs</Link>
+        <Link onClick={() => setShowNav(true)} className={itim.className} href='/blogs'>Articles</Link>
       </div>
       <div className='navMenuicon'  >
         {
