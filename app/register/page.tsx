@@ -155,6 +155,7 @@ export default function RegisterForm() {
                 value={formData.password}
                 onChange={handleChange}
                 disabled={loading}
+                placeholder="********"
               />
             </div>
 
@@ -169,6 +170,7 @@ export default function RegisterForm() {
                 value={formData.confirmPassword}
                 onChange={handleChange}
                 disabled={loading}
+                placeholder="********"
               />
             </div>
           </CardContent>

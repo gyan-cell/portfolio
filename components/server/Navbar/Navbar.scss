@@ -26,6 +26,13 @@ nav {
     font-family: "Itim" !important;
 
     >a {
+      >button {
+        font-size: 1rem;
+        font-family: "Caveat" !important;
+        height: 100%;
+        width: 100%;
+      }
+
       &:hover {
         cursor: pointer;
         color: #22c55e;

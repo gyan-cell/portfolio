@@ -1,11 +1,16 @@
 "use client";
 import { itim } from "@/styles/fonts";
+import { useSession } from "next-auth/react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React from "react";
 import { AiOutlineMenu } from "react-icons/ai";
 import { FaX } from "react-icons/fa6";
+import { Button } from "../ui/button";
+import { ArrowDown } from "lucide-react";
 const NavElements = () => {
+  const { data: session } = useSession();
+
   const [showNav, setShowNav] = React.useState(true);
 
   const pathName = usePathname();
@@ -22,21 +27,42 @@ const NavElements = () => {
         <Link
           onClick={() => setShowNav(true)}
           className={itim.className}
-          href={pathName === "/blogs" ? "/#projects" : "#projects"}
+          href={
+            pathName === "/blogs" ||
+            pathName === "/profile" ||
+            pathName === "/login" ||
+            pathName === "/register"
+              ? "/#projects"
+              : "#projects"
+          }
         >
           Projects
         </Link>
         <Link
           onClick={() => setShowNav(true)}
           className={itim.className}
-          href={pathName === "/blogs" ? "/#about" : "#about"}
+          href={
+            pathName === "/blogs" ||
+            pathName === "/profile" ||
+            pathName === "/login" ||
+            pathName === "/register"
+              ? "/#about"
+              : "#about"
+          }
         >
           About
         </Link>
         <Link
           onClick={() => setShowNav(true)}
           className={itim.className}
-          href={pathName === "/blogs" ? "/#contact" : "#contact"}
+          href={
+            pathName === "/blogs" ||
+            pathName === "/profile" ||
+            pathName === "/login" ||
+            pathName === "/register"
+              ? "/#contact"
+              : "#contact"
+          }
         >
           Contact
         </Link>
@@ -55,6 +81,19 @@ const NavElements = () => {
         >
           Articles
         </Link>
+        {session ? (
+          <Link
+            onClick={() => setShowNav(true)}
+            className={itim.className}
+            href="/profile"
+          >
+            <Button variant="default">
+              {session.user.name?.toUpperCase()}
+            </Button>
+          </Link>
+        ) : (
+          ""
+        )}
       </div>
       <div className="navMenuicon">
         {showNav ? (
