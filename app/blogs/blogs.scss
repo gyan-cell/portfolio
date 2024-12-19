@@ -1,5 +1,5 @@
 .blogsHead {
-  height: 43rem;
+  height: 100vh;
   position: relative;
   margin-top: -4rem;
 
@@ -32,6 +32,44 @@
       align-items: center;
       background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.9));
 
+      >.blogTextHead {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        >.blogButton {
+          margin-top: 1rem;
+          font-size: 2rem;
+          height: 5rem;
+          width: 5rem;
+          border-radius: 100%;
+          font-family: 'Caveat';
+          background: transparent;
+
+          >a {
+            height: 100%;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            >svg {
+              height: 100%;
+              width: 100%;
+              color: white;
+            }
+
+          }
+
+
+        }
+      }
+
+      >.blogButton {
+        margin-top: 1rem;
+        justify-self: flex-end;
+      }
     }
   }
 }
