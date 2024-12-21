@@ -1,6 +1,8 @@
 "use client";
 
+import { Button } from "@/components/ui/button";
 import { useSession } from "next-auth/react";
+import Link from "next/link";
 
 import React from "react";
 
@@ -9,10 +11,21 @@ const page = () => {
 
   console.log("session", session);
   if (!session) {
-    return <div>Please sign in</div>;
+    return (
+      <div className="flex justify-center items-center h-screen w-screen">
+        Please{" "}
+        <Button className="ml-2">
+          <Link href="/api/auth/signin">Sign In</Link>
+        </Button>
+      </div>
+    );
   }
   if (session.user.role !== "admin") {
-    return <div>Unauthorized</div>;
+    return (
+      <div className="flex justify-center items-center h-screen w-screen">
+        Unauthorized.
+      </div>
+    );
   }
 
   return <div>page</div>;

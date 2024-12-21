@@ -25,7 +25,7 @@ const BlogsHead = () => {
             </span>
             <Button className="blogButton">
               {" "}
-              <Link href="/blogs">
+              <Link href="/blogs/#blogsLiner">
                 <ArrowDown />
               </Link>
             </Button>
