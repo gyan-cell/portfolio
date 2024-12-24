@@ -76,7 +76,108 @@
 
 
 .blogsLiner {
-  height: 98vh;
   background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.9));
-  width: 100%
+  width: 100%;
+
+  >.blogHead {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+
+    >.search {
+      width: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: rgba(0, 0, 0, 0.5);
+
+      >input {
+        width: 99%;
+        height: 3rem;
+        border-radius: 0.5rem;
+        border: none;
+        padding: 0.5rem;
+        font-size: 1rem;
+        font-family: 'Itim';
+        color: white;
+        background: #2b2a33;
+        border-top-left-radius: 0.5rem;
+        border-bottom-left-radius: 0.5rem;
+        border-top-right-radius: 0rem;
+        border-bottom-right-radius: 0rem;
+
+        >&:focus {
+          outline: none;
+          border: none;
+          -webkit-tap-highlight-color: transparent;
+        }
+      }
+
+      >input:focus {
+        outline: none;
+        border: none;
+        -webkit-tap-highlight-color: transparent;
+      }
+
+      >button {
+        height: 3rem;
+        width: 3rem;
+        font-size: 1rem;
+        border: none;
+        padding: 0.5rem;
+        border-top-left-radius: 0rem;
+        border-bottom-left-radius: 0rem;
+        border-top-right-radius: 0.5rem;
+        border-bottom-right-radius: 0.5rem;
+        color: white;
+        border: none;
+        background: #2b2a33;
+      }
+    }
+  }
+
+
+  >.blogCardContainer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    >.blogCard {
+
+      >.blogCard__category {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1rem;
+        font-family: 'Itim';
+        color: white;
+      }
+
+      >.blogCard__description {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1rem;
+        font-family: 'Itim';
+        color: white;
+      }
+
+      >.blogCard__title {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 2rem;
+        font-family: 'Itim';
+        color: white;
+      }
+    }
+
+  }
 }

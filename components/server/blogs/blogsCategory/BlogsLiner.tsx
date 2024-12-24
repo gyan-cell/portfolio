@@ -1,5 +1,7 @@
 import { Button } from "@/components/ui/button";
-import { caveat } from "@/styles/fonts";
+import { Input } from "@/components/ui/input";
+import { caveat, itim } from "@/styles/fonts";
+import { MagnifyingGlassIcon } from "@radix-ui/react-icons";
 import { ArrowDown } from "lucide-react";
 import Link from "next/link";
 import React from "react";
@@ -23,13 +25,57 @@ const blogsTopic = [
     uniqueId: 2,
     Link: "/blogs/2",
   },
+  {
+    title: "Title",
+    description:
+      "Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint cillum sint consectetur cupidatat.",
+    image: "https://via.placeholder.com/300",
+    category: "Others",
+    uniqueId: 2,
+    Link: "/blogs/2",
+  },
+  {
+    title: "Title",
+    description:
+      "Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint cillum sint consectetur cupidatat.",
+    image: "https://via.placeholder.com/300",
+    category: "Others",
+    uniqueId: 2,
+    Link: "/blogs/2",
+  },
+  {
+    title: "Title",
+    description:
+      "Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint cillum sint consectetur cupidatat.",
+    image: "https://via.placeholder.com/300",
+    category: "Others",
+    uniqueId: 2,
+    Link: "/blogs/2",
+  },
+  {
+    title: "Title",
+    description:
+      "Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint cillum sint consectetur cupidatat.",
+    image: "https://via.placeholder.com/300",
+    category: "Others",
+    uniqueId: 2,
+    Link: "/blogs/2",
+  },
 ];
 
 const BlogsLiner = () => {
   return (
     <div id="blogsLiner" className="blogsLiner">
-      {blogsTopic.map((blog) => (
-        <div className="blogCardContainer">
+      <div className="blogHead">
+        <div className="search">
+          <input className={itim.className} type="text" placeholder="Search" />
+          <Button className={itim.className}>
+            <MagnifyingGlassIcon />
+          </Button>
+        </div>
+      </div>
+      <div className="blogCardContainer">
+        {blogsTopic.map((blog) => (
           <div className="blogCard">
             <div className="blogCard__title">
               <h1 className={caveat.className}>{blog.title}</h1>
@@ -46,8 +92,8 @@ const BlogsLiner = () => {
               </Button>
             </div>
           </div>
-        </div>
-      ))}
+        ))}
+      </div>
     </div>
   );
 };
