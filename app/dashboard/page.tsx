@@ -1,5 +1,6 @@
 "use client";
 
+import UploadThingCustom from "@/components/client/dashboard/Dashboard";
 import { Button } from "@/components/ui/button";
 import { useSession } from "next-auth/react";
 import Link from "next/link";
@@ -28,7 +29,11 @@ const page = () => {
     );
   }
 
-  return <div>page</div>;
+  return (
+    <div>
+      <UploadThingCustom />
+    </div>
+  );
 };
 
 export default page;
