@@ -1,5 +1,14 @@
+import dotenv from "dotenv";
+
 import app from "./app.js";
 
-const server = app.listen(3000, () => {
-  console.log("The server is running on port 3000!");
+// Load environment variables in development
+if (process.env.NODE_ENV !== "production") {
+  dotenv.config({ path: "./.env" });
+}
+
+const PORT = process.env.PORT;
+
+const server = app.listen(PORT, () => {
+  console.log(`The server is running on port ${PORT}!`);
 });
