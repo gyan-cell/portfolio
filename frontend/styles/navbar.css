@@ -8,6 +8,7 @@
   right: 0;
   z-index: 1000;
   background: transparent;
+  background: linear-gradient(to bottom, #f8f9fa 0%, #e9ecef 100%);
   backdrop-filter: blur(5px);
   transition: all 0.3s ease-in-out;
   border-bottom: 1px solid transparent;

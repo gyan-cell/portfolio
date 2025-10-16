@@ -114,7 +114,12 @@ const Navbar = () => {
               onClick={handleContactClick}
               aria-label="Contact me"
             >
-              Contact
+              <Link
+                href={"https://www.linkedin.com/in/gyanranjan-jha-7009b3256"}
+                target="_blank"
+              >
+                Linkedin
+              </Link>
             </button>
           </div>
 
