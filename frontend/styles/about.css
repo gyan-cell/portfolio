@@ -4,6 +4,7 @@
   padding: 3rem 2rem;
   background: linear-gradient(to bottom, #f8f9fa 0%, #e9ecef 100%);
   position: relative;
+  margin-top: 5rem;
 }
 
 /* Newspaper texture overlay */
@@ -231,6 +232,7 @@
 .info-box {
   background: #2c3e50;
   color: white;
+  padding: 0.5rem;
 }
 
 .info-box .section-title {
@@ -440,6 +442,9 @@
   color: #1a1a1a;
   padding: 0.5rem 0 0.5rem 1.5rem;
   position: relative;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
 }
 
 .experience-description li::before {
@@ -478,9 +483,12 @@
 
 .skill-tag {
   font-family: var(--font-cormorant-upright);
-  font-size: 0.9375rem;
+  font-size: 1rem;
   padding: 0.625rem 1rem;
   background: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   border: 2px solid #2c3e50;
   text-align: center;
   font-weight: 600;
@@ -586,10 +594,10 @@
   justify-content: space-between;
   align-items: center;
   font-family: var(--font-cormorant-upright);
-  font-size: 0.75rem;
+  font-size: 1rem;
   color: #5a6c7d;
   letter-spacing: 1px;
-  font-weight: 600;
+  font-weight: 700;
 }
 
 /* Animations */

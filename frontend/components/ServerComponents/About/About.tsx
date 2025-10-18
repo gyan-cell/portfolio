@@ -4,6 +4,9 @@
 import { useState, useEffect } from "react";
 import { Cormorant_Upright, Cormorant, Jim_Nightshade } from "next/font/google";
 import "@/styles/about.css";
+import { MdContactMail, MdLocationPin } from "react-icons/md";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
+import Link from "next/link";
 
 const cormorantUpright = Cormorant_Upright({
   subsets: ["latin"],
@@ -29,7 +32,6 @@ interface AboutData {
     title: string;
     location: string;
     email: string;
-    phone: string;
     github: string;
     linkedin: string;
   };
@@ -92,7 +94,6 @@ const About = () => {
       title: "Fullstack Developer and Security Analyst",
       location: "Boisar, Maharashtra, India",
       email: "hellogyanranjan@gmail.com",
-      phone: "CAN'T Share OOpsie",
       github: "gyan-cell",
       linkedin: "gyanranjan-jha-7009b3256",
     },
@@ -240,38 +241,66 @@ const About = () => {
               <div className="box-divider"></div>
               <div className="contact-items">
                 <div className="contact-item">
-                  <span className="contact-icon">📍</span>
+                  <span className="contact-icon">
+                    <MdLocationPin />
+                  </span>
                   <div>
                     <strong>Location</strong>
                     <p>{aboutData.personalInfo.location}</p>
                   </div>
                 </div>
+
                 <div className="contact-item">
-                  <span className="contact-icon">✉️</span>
+                  <span className="contact-icon">
+                    <MdContactMail />
+                  </span>
                   <div>
                     <strong>Email</strong>
-                    <p>{aboutData.personalInfo.email}</p>
+                    <Link href={`mailto:${aboutData.personalInfo.email}`}>
+                      <p className="hover:text-blue-500 transition-colors cursor-pointer">
+                        {aboutData.personalInfo.email}
+                      </p>
+                    </Link>
                   </div>
                 </div>
+
                 <div className="contact-item">
-                  <span className="contact-icon">📞</span>
-                  <div>
-                    <strong>Phone</strong>
-                    <p>{aboutData.personalInfo.phone}</p>
-                  </div>
-                </div>
-                <div className="contact-item">
-                  <span className="contact-icon">💼</span>
+                  <span className="contact-icon">
+                    <FaLinkedin />
+                  </span>
                   <div>
                     <strong>LinkedIn</strong>
-                    <p>{aboutData.personalInfo.linkedin}</p>
+                    <Link
+                      href={`https://linkedin.com/in/${aboutData.personalInfo.linkedin}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <p className="hover:text-blue-500 transition-colors cursor-pointer">
+                        {aboutData.personalInfo.linkedin
+                          .replace("https://", "")
+                          .replace("www.", "")}
+                      </p>
+                    </Link>
                   </div>
                 </div>
+
                 <div className="contact-item">
-                  <span className="contact-icon">🔧</span>
+                  <span className="contact-icon">
+                    <FaGithub />
+                  </span>
                   <div>
                     <strong>GitHub</strong>
-                    <p>{aboutData.personalInfo.github}</p>
+                    <Link
+                      href={`https://github.com/${aboutData.personalInfo.github}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <p className="hover:text-blue-500 transition-colors cursor-pointer">
+                        {aboutData.personalInfo.github
+                          .replace("https://", "")
+                          .replace("www.", "")}
+                      </p>
+                    </Link>
                   </div>
                 </div>
               </div>
